@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename package &apos;문자열&apos; to &apos;g_문자열&apos;&#x0D;&#x0A;- Original project: &apos;단계별로풀기&apos;&#x0D;&#x0A;- Original element: &apos;단계별로풀기/src/문자열&apos;&#x0D;&#x0A;- Renamed element: &apos;단계별로풀기/src/g_문자열&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename package &apos;문자열&apos;" flags="589830" hierarchical="false" id="org.eclipse.jdt.ui.rename.package" input="/src&lt;문자열" name="g_문자열" qualified="false" references="true" stamp="1563329773250" textual="false" version="1.0"/>
+</session>
