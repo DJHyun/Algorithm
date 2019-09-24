@@ -1,4 +1,5 @@
-package 프로그래머스;
+//www.programmers.co.kr
+package Lev3;
 
 class _2xN타일링 {
 	public static int solution(int n) {

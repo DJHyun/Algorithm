@@ -1,5 +1,5 @@
 //www.programmers.co.kr
-package 프로그래머스;
+package Lev3;
 
 import java.util.Deque;
 import java.util.LinkedList;
@@ -76,9 +76,8 @@ public class 카카오프렌즈컬러링북 {
 	}
 
 	public static void main(String[] args) {
-		카카오프렌즈컬러링북 ch = new 카카오프렌즈컬러링북();
+		카카오프렌즈컬러링북 ch = new 카카오프렌즈컬러링북 ();
 		ch.solution(6, 4, new int[][] { { 1, 1, 1, 0 }, { 1, 2, 2, 0 }, { 1, 0, 0, 1 }, { 0, 0, 0, 1 }, { 0, 0, 0, 3 },
 				{ 0, 0, 0, 3 } });
-
 	}
 }
