@@ -1,4 +1,4 @@
-//www.programmers.co.kr
+//source = www.programmers.co.kr
 package Lev3;
 
 public class N으로표현 {
