@@ -1,11 +1,8 @@
 //source = www.programmers.co.kr
 package Lev3;
 
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collections;
 import java.util.Comparator;
-import java.util.List;
 
 public class 단속카메라 {
 	public static int solution(int[][] routes) {
@@ -37,7 +34,6 @@ public class 단속카메라 {
 				}
 			}
 		}
-		System.out.println(answer);
 		return answer;
 	}
 
