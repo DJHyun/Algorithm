@@ -1,5 +1,4 @@
 # baekjoon source = "https://www.acmicpc.net/problem/3088"
-import sys
 
 '''
 5
@@ -10,14 +9,28 @@ import sys
 11 10 9
 '''
 
+import sys
+
 n = int(sys.stdin.readline())
-arr = [list(map(int,sys.stdin.readline().split())) for _ in range(n)]
-memo = [0]*(n+1)
+r = 0
+d = [0] * 1000001
+for _ in range(n):
+    flag = True
+    a, b, c = map(int, sys.stdin.readline().split())
+    if d[a] == 1:
+        d[b] = d[c] = 1
+        flag = False
+        break
+    if d[b] == 1:
+        d[a] = d[c] = 1
+        flag = False
+        break
+    if d[c] == 1:
+        d[a] = d[b] = 1
+        flag = False
+        break
 
-for i in range(n):
-    for j in range(i+1,n):
-        for z in range(3):
-            if arr[j][z] in arr[i]:
-
-
-print(memo)
+    if flag:
+        d[a] = d[b] = d[c] = 1
+        r += 1
+sys.stdout.write(str(r))
