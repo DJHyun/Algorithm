@@ -1,19 +1,24 @@
 # baekjoon source = "https://www.acmicpc.net/problem/2670"
 
+'''
+8
+1.1
+0.7
+1.3
+0.9
+1.4
+0.8
+0.7
+1.4
+'''
 import sys
 n = int(sys.stdin.readline())
-max_ = 0
-result = 1
-num = [0]*n
+result = 0
+num = [float(sys.stdin.readline()) for _ in range(n)]
 for i in range(n):
-    number = float(sys.stdin.readline())
-    max_ = max(max_,number)
-    result *= number
-    num[i] = number
+    check = 1
+    for j in range(i,n):
+        check *= num[j]
+        result = max(result,check)
+sys.stdout.write("%0.3f"%result)
 
-print(max_)
-for i in range(n):
-    check = result
-    check /= num[i]
-    
-print(result)
