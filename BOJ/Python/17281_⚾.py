@@ -1,109 +1,72 @@
 # baekjoon source = "https://www.acmicpc.net/problem/17281"
+import itertools
+import sys
+import time
+st = time.time()
+n = int(sys.stdin.readline())
+arr = [list(map(int, sys.stdin.readline().split())) for _ in range(n)]
 
-# def check(a, result, out, base):
-#     if a == 0:
-#         out += 1
-#     elif a == 1:
-#         for i in range(2, -1, -1):
-#             if base[i]:
-#                 if i == 2:
-#                     result += 1
-#                     base[i] = 0
-#                 else:
-#                     base[i + 1] = 1
-#                     base[i] = 0
-#         base[0] = 1
-#     elif a == 2:
-#         for i in range(2, -1, -1):
-#             if base[i]:
-#                 if i >= 1:
-#                     result += 1
-#                     base[i] = 0
-#                 else:
-#                     base[i + 2] = 1
-#                     base[i] = 0
-#         base[1] = 1
-#     elif a == 3:
-#         for i in range(2, -1, -1):
-#             if base[i]:
-#                 result += 1
-#                 base[i] = 0
-#         base[2] = 1
-#     else:
-#         result += (base.count(1) + 1)
-#         for i in range(3):
-#             base[i] = 0
-#
-#     return [result, out, base]
+result = 0
+# print(n)
+# print(arr)
+go = [4, 5, 6, 0, 3, 1, 7, 2, 8]
+# itertools.permutations(range(1, 9), 8)
+for it in itertools.permutations(range(1, 9), 8):
+    it = list(it)
+    it.insert(3, 0)
+    print(it)
+    score = 0
+    index = 0
+    for count in range(n):
+        base = [0, 0, 0]
+        out = 0
+        while out != 3:
 
-def solution(b):
-    global r, player, cnt
-
-    if b == 9:
-        result = 0
-        idx = 0
-        for i in range(n):
-            out = 0
-            base = [0, 0, 0]
-            while True:
-                a = score[i][player[idx]]
-                if a == 0:
-                    out += 1
-                elif a == 1:
-                    for i in range(2, -1, -1):
-                        if base[i]:
-                            if i == 2:
-                                result += 1
-                                base[i] = 0
-                            else:
-                                base[i + 1] = 1
-                                base[i] = 0
-                    base[0] = 1
-                elif a == 2:
-                    for i in range(2, -1, -1):
-                        if base[i]:
-                            if i >= 1:
-                                result += 1
-                                base[i] = 0
-                            else:
-                                base[i + 2] = 1
-                                base[i] = 0
-                    base[1] = 1
-                elif a == 3:
-                    for i in range(2, -1, -1):
-                        if base[i]:
-                            result += 1
-                            base[i] = 0
+            if arr[count][it[index]] == 0:
+                out += 1
+            elif arr[count][it[index]] == 1:
+                if base[2] == 1:
+                    score += 1
+                    base[2] = 0
+                if base[1] == 1:
                     base[2] = 1
-                else:
-                    result += (base.count(1) + 1)
-                    for i in range(3):
+                    base[1] = 0
+                if base[0] == 1:
+                    base[1] = 1
+                base[0] = 1
+            elif arr[count][it[index]] == 2:
+                if base[2] == 1:
+                    score += 1
+                    base[2] = 0
+                if base[1] == 1:
+                    score += 1
+                    base[1] = 0
+                if base[0] == 1:
+                    base[2] = 1
+                    base[0] = 0
+                base[1] = 1
+            elif arr[count][it[index]] == 3:
+                if base[2] == 1:
+                    score += 1
+                    base[2] = 0
+                if base[1] == 1:
+                    score += 1
+                    base[1] = 0
+                if base[0] == 1:
+                    score += 1
+                    base[0] = 0
+                base[2] = 1
+            elif arr[count][it[index]] == 4:
+                for i in range(3):
+                    if base[i] == 1:
+                        score += 1
                         base[i] = 0
+                score += 1
 
-                if out == 3:
-                    idx += 1
-                    idx %= 9
-                    break
+            index += 1
+            index %= 9
 
-                idx += 1
-                idx %= 9
-        r = max(r, result)
-        return
-    else:
-        if b == 3:
-            solution(b + 1)
-        else:
-            for i in range(1, 9):
-                if not visited[i]:
-                    visited[i] = 1
-                    player[b] = i
-                    solution(b + 1)
-                    visited[i] = 0
+    result = max(result,score)
 
-n = int(input())
-score = [list(map(int, input().split())) for _ in range(n)]
-visited = [0] * 9
-player = [0] * 9
-r = float('-inf')
-solution(0)
-print(r)
+print(result)
+print(time.time() - st)
