@@ -1,4 +1,4 @@
-# SW Expert Academy
+# baekjoon source = "https://www.acmicpc.net/problem/1204"
 T = int(input())
 
 for i in range(1, T + 1):
