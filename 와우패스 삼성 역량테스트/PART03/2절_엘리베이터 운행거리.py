@@ -6,21 +6,17 @@
 '''
 
 t = int(input())
-result = 1
-score = 0
-for tc in range(t):
+start = 1
+result = 0
+for tc in range(1, t + 1):
     a, b = map(int, input().split())
-    for i in range(2):
-        if i == 0:
-            if result - a < 0:
-                score += abs(result - a) + 1
-            else:
-                score += abs(result - a)
-        else:
-            if result - b < 0:
-                score += abs(result - b) + 1
-            else:
-                score += abs(result - b)
-    result = b
+    if a < 0:
+        a += 1
+    if b < 0:
+        b += 1
+    result += abs(start - a)
+    start = a
+    result += abs(start - b)
+    start = b
 
-print(score)
+print(result)
