@@ -20,6 +20,9 @@ for i in range(k):
 for v, i in enumerate(mal):
     visited[i[0]][i[1]].append(v)
 
+# for v in visited:
+#     print(*v)
+# print()
 result = 0
 result_flag = False
 while result <= 1000:
@@ -171,11 +174,20 @@ while result <= 1000:
             result_flag = True
             break
 
+        # for v in visited:
+        #     print(*v)
+        # print()
     if result_flag:
         result += 1
+        # for v in visited:
+        #     print(*v)
         break
 
     result += 1
+    # print(result)
+    # for v in visited:
+    #     print(*v)
+    # print()
 if result == 1001:
     print(-1)
 else:
