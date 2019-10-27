@@ -42,5 +42,4 @@ for i in range(n):
         if arr[i][j] == 'L':
             solution(i, j)
 
-
 print(result)
