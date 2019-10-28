@@ -9,7 +9,7 @@ def check(x, y):
     return True
 
 def solution(x, y):
-    
+
     global result,count
 
     q = deque([[x,y]])
