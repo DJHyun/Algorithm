@@ -9,6 +9,7 @@ def check(x, y):
     return True
 
 def solution(x, y):
+    
     global result,count
 
     q = deque([[x,y]])
@@ -41,6 +42,5 @@ for i in range(n):
         count += 1
         if arr[i][j] == 'L':
             solution(i, j)
-
 
 print(result)
