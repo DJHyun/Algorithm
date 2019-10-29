@@ -5,37 +5,41 @@ import sys
 t = int(sys.stdin.readline())
 for tc in range(t):
     v, e = map(int, sys.stdin.readline().split())
+    arr = [[] for _ in range(v + 1)]
     visited = [0] * (v + 1)
-    result = 0
-    flag = True
 
     for i in range(e):
         a, b = map(int, sys.stdin.readline().split())
-        if i == 0:
-            visited[a] = 1
-            visited[b] = 2
-            continue
+        arr[a].append(b)
+        arr[b].append(a)
 
-        if not visited[a]:
-            if not visited[b]:
-                visited[a] = 1
-                visited[b] = 2
-            elif visited[b] == 1:
-                visited[a] = 2
-            else:
-                visited[a] = 1
-        elif visited[a] == 1:
-            if not visited[b]:
-                visited[b] = 2
-            elif visited[b] == 1:
-                flag = False
-        else:
-            if not visited[b]:
-                visited[b] = 1
-            elif visited[b] == 2:
-                flag = False
+    for i in range(1, v + 1):
+        flag = False
+        for j in arr[i]:
+            if not visited[i]:
+                if not visited[j]:
+                    visited[i] = 1
+                    visited[j] = 2
+                elif visited[j] == 1:
+                    visited[i] = 2
+                elif visited[j] == 2:
+                    visited[i] = 1
+            elif visited[i] == 1:
+                if not visited[j]:
+                    visited[j] = 2
+                elif visited[j] == 1:
+                    flag = True
+                    break
+            elif visited[j] == 2:
+                if not visited[j]:
+                    visited[j] = 1
+                elif visited[j] == 2:
+                    flag = True
+                    break
 
-    if flag:
-        print('YES')
+        if flag:
+            print('NO')
+            break
+
     else:
-        print('NO')
+        print('YES')
