@@ -1,3 +1,4 @@
+# SW Expert Academy
 import sys
 
 sys.stdin = open("1242_암호코드스캔.txt", "r")

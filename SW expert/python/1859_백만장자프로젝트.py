@@ -1,3 +1,4 @@
+# SW Expert Academy
 import sys
 
 sys.stdin = open("1859_백만장자프로젝트.txt", "r")

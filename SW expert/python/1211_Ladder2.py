@@ -1,3 +1,4 @@
+# SW Expert Academy
 import sys
 
 sys.stdin = open('뭐지.txt', 'r')

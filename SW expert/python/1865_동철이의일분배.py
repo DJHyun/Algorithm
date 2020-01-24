@@ -1,3 +1,4 @@
+# SW Expert Academy
 import sys
 
 sys.stdin = open("1865_동철이의일분배.txt", "r")

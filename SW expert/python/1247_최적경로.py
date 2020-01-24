@@ -1,3 +1,4 @@
+# SW Expert Academy
 import sys
 
 sys.stdin = open("1247_최적경로.txt", "r")

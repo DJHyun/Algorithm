@@ -1,3 +1,4 @@
+# SW Expert Academy
 import sys
 
 sys.stdin = open('1493_수의새로운연산.txt', 'r')

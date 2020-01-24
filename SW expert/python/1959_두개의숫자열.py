@@ -1,3 +1,4 @@
+# SW Expert Academy
 import sys
 sys.stdin = open("1959_두개의숫자열.txt","r")
 
