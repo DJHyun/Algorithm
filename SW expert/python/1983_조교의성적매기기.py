@@ -1,3 +1,4 @@
+# SW Expert Academy
 import sys
 
 sys.stdin = open('input (19).txt', 'r')

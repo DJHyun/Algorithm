@@ -1,3 +1,4 @@
+# SW Expert Academy
 import sys
 sys.stdin = open('1946_간단한압축풀기.txt','r')
 

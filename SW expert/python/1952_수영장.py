@@ -1,3 +1,4 @@
+# SW Expert Academy
 import sys
 
 sys.stdin = open("1952_수영장.txt", "r")

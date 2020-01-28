@@ -1,3 +1,4 @@
+# SW Expert Academy
 import sys
 sys.stdin = open("파리퇴치.txt","r")
 T = int(input())

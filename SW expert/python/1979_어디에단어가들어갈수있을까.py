@@ -1,3 +1,4 @@
+# SW Expert Academy
 import sys
 
 sys.stdin = open("1979_어디에단어가들어갈수있을까.txt", "r")
